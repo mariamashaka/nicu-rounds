@@ -186,11 +186,10 @@ const App = {
         `;
     },
 
-    // Show add patient form
-    showAddPatientForm() {
-        alert('Add patient form - to be implemented');
-        // Will create this in next module
-    },
+// Show add patient form
+showAddPatientForm() {
+    AddPatientForm.show();
+}
 
     // Open patient detail page
     openPatient(patientId) {
