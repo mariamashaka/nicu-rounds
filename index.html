@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NICU Rounds</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/global.css">
+    
+    <!-- Core Scripts -->
+    <script src="core/storage.js" defer></script>
+    <script src="core/calculations.js" defer></script>
+    <script src="core/language.js" defer></script>
+    <script src="core/app.js" defer></script>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header class="app-header">
+        <div class="header-content">
+            <h1 class="app-title" data-translate="app.title">NICU Rounds</h1>
+            
+            <div class="header-actions">
+                <!-- Language Switcher -->
+                <button id="languageToggle" class="btn-icon" aria-label="Switch language">
+                    <span id="currentLang">EN</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Navigation Tabs -->
+        <nav class="nav-tabs">
+            <button class="nav-tab active" data-page="patients" data-translate="nav.patients">
+                Active Patients
+            </button>
+            <button class="nav-tab" data-page="archive" data-translate="nav.archive">
+                Archive
+            </button>
+            <button class="nav-tab" data-page="statistics" data-translate="nav.statistics">
+                Statistics
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main id="appContent" class="app-content">
+        <!-- Content will be loaded dynamically here -->
+        <div class="loading">
+            <p data-translate="loading">Loading...</p>
+        </div>
+    </main>
+
+    <!-- Add Patient Button (Fixed) -->
+    <button id="addPatientBtn" class="btn-fab" aria-label="Add new patient">
+        <span class="fab-icon">+</span>
+    </button>
+
+</body>
+</html>
