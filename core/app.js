@@ -193,8 +193,7 @@ const App = {
 
     // Open patient detail page
     openPatient(patientId) {
-        alert(`Opening patient: ${patientId} - to be implemented`);
-        // Will create this in patient-card module
+        PatientCard.show(patientId);
     }
 };
 
