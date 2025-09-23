@@ -186,10 +186,10 @@ const App = {
         `;
     },
 
-// Show add patient form
-showAddPatientForm() {
-    AddPatientForm.show();
-}
+    // Show add patient form
+    showAddPatientForm() {
+        AddPatientForm.show();
+    },
 
     // Open patient detail page
     openPatient(patientId) {
