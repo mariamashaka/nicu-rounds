@@ -1,0 +1,109 @@
+/* NICU Rounds App - Design System Variables */
+
+:root {
+  /* Color Palette - Soft Lavender/Purple Theme for babies */
+  --color-primary: #9b87f5;          /* Soft purple */
+  --color-primary-light: #c4b5fd;    /* Light lavender */
+  --color-primary-dark: #7c3aed;     /* Deep purple */
+  
+  --color-background: #faf5ff;       /* Very light lavender background */
+  --color-surface: #ffffff;          /* White for cards */
+  --color-surface-alt: #f3e8ff;      /* Light purple for alternating rows */
+  
+  /* Status Colors */
+  --color-success: #86efac;          /* Soft green */
+  --color-warning: #fbbf24;          /* Orange */
+  --color-danger: #f87171;           /* Red for critical alerts */
+  --color-info: #60a5fa;             /* Blue for information */
+  
+  /* Text Colors */
+  --color-text-primary: #1f2937;     /* Dark gray for main text */
+  --color-text-secondary: #6b7280;   /* Medium gray for secondary text */
+  --color-text-disabled: #9ca3af;    /* Light gray for disabled */
+  --color-text-inverse: #ffffff;     /* White text on dark backgrounds */
+  
+  /* Border & Dividers */
+  --color-border: #e5e7eb;
+  --color-border-focus: var(--color-primary);
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  
+  /* Spacing Scale */
+  --spacing-xs: 0.25rem;   /* 4px */
+  --spacing-sm: 0.5rem;    /* 8px */
+  --spacing-md: 1rem;      /* 16px */
+  --spacing-lg: 1.5rem;    /* 24px */
+  --spacing-xl: 2rem;      /* 32px */
+  --spacing-2xl: 3rem;     /* 48px */
+  
+  /* Typography */
+  --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-family-mono: 'Courier New', Courier, monospace;
+  
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.25rem;    /* 20px */
+  --font-size-2xl: 1.5rem;    /* 24px */
+  --font-size-3xl: 1.875rem;  /* 30px */
+  
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  
+  /* Border Radius */
+  --radius-sm: 0.25rem;   /* 4px */
+  --radius-md: 0.5rem;    /* 8px */
+  --radius-lg: 0.75rem;   /* 12px */
+  --radius-xl: 1rem;      /* 16px */
+  --radius-full: 9999px;  /* Fully rounded */
+  
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 200ms ease-in-out;
+  --transition-slow: 300ms ease-in-out;
+  
+  /* Z-index Scale */
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1020;
+  --z-index-modal: 1030;
+  --z-index-popover: 1040;
+  --z-index-tooltip: 1050;
+  
+  /* Component Specific */
+  --card-padding: var(--spacing-lg);
+  --button-height: 2.75rem;  /* 44px - touch friendly */
+  --input-height: 2.5rem;    /* 40px */
+  --header-height: 3.5rem;   /* 56px */
+}
+
+/* Patient Status Colors */
+:root {
+  --status-stable: #86efac;
+  --status-monitoring: #fbbf24;
+  --status-critical: #f87171;
+  --status-discharged: #60a5fa;
+  --status-deceased: #6b7280;
+}
+
+/* Vital Signs Alert Colors */
+:root {
+  --vital-normal: #86efac;
+  --vital-warning: #fbbf24;
+  --vital-critical: #f87171;
+}
+
+/* Sex Icons Colors */
+:root {
+  --color-male: #60a5fa;
+  --color-female: #f9a8d4;
+}
