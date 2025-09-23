@@ -1,0 +1,128 @@
+{
+  "app": {
+    "title": "NICU Rounds"
+  },
+  
+  "nav": {
+    "patients": "Active Patients",
+    "archive": "Archive",
+    "statistics": "Statistics"
+  },
+  
+  "patients": {
+    "empty_title": "No Active Patients",
+    "empty_message": "Click the + button below to add your first patient",
+    "add_patient": "Add Patient",
+    "search": "Search patients..."
+  },
+  
+  "patient": {
+    "name": "Patient Name",
+    "sex": "Sex",
+    "male": "Male",
+    "female": "Female",
+    "dob": "Date of Birth",
+    "admission_date": "Admission Date",
+    "admission_source": "Admission Source",
+    "birth_weight": "Birth Weight",
+    "current_weight": "Current Weight",
+    "ga": "Gestational Age",
+    "dol": "Day of Life",
+    "dpa": "Day Post Admission"
+  },
+  
+  "vitals": {
+    "title": "Vital Signs",
+    "heart_rate": "Heart Rate",
+    "resp_rate": "Respiratory Rate",
+    "temperature": "Temperature",
+    "spo2": "SpO2",
+    "on_room_air": "Room Air",
+    "on_oxygen": "O2 Support",
+    "on_cpap": "CPAP",
+    "normal": "Normal",
+    "warning": "Warning",
+    "critical": "Critical"
+  },
+  
+  "diagnosis": {
+    "title": "Diagnoses",
+    "select": "Select diagnosis",
+    "hie": "HIE (Hypoxic-Ischemic Encephalopathy)",
+    "birth_asphyxia": "Birth Asphyxia",
+    "eons": "EONS (Early Onset Neonatal Sepsis)",
+    "lons": "LONS (Late Onset Neonatal Sepsis)",
+    "rds": "RDS (Respiratory Distress Syndrome)",
+    "jaundice": "Jaundice/Hyperbilirubinemia",
+    "nec": "NEC (Necrotizing Enterocolitis)",
+    "macrosomia": "Macrosomia",
+    "iugr": "IUGR (Intrauterine Growth Restriction)"
+  },
+  
+  "examination": {
+    "title": "Clinical Examination",
+    "activity": "Activity Level",
+    "active": "Active",
+    "lethargic": "Lethargic",
+    "unresponsive": "Unresponsive",
+    "sucking_reflex": "Sucking Reflex",
+    "normal": "Normal",
+    "weak": "Weak",
+    "absent": "Absent",
+    "convulsions": "Convulsions Today",
+    "yes": "Yes",
+    "no": "No"
+  },
+  
+  "treatment": {
+    "title": "Current Treatment",
+    "medications": "Medications",
+    "nutrition": "Nutrition",
+    "supportive_care": "Supportive Care",
+    "oxygen": "Oxygen Therapy",
+    "cpap": "CPAP",
+    "phototherapy": "Phototherapy",
+    "iv_fluids": "IV Fluids"
+  },
+  
+  "plan": {
+    "title": "Plan for Today",
+    "investigations": "Investigations",
+    "changes": "Treatment Changes",
+    "monitoring": "Monitoring"
+  },
+  
+  "actions": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "archive": "Archive",
+    "print": "Print",
+    "export": "Export"
+  },
+  
+  "archive": {
+    "title": "Archived Patients",
+    "discharged": "Discharged",
+    "transferred": "Transferred",
+    "deceased": "Deceased"
+  },
+  
+  "statistics": {
+    "title": "Department Statistics",
+    "total_patients": "Total Patients",
+    "active": "Currently Active",
+    "archived": "Archived",
+    "by_diagnosis": "By Diagnosis",
+    "outcomes": "Outcomes"
+  },
+  
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "confirm": "Confirm",
+    "close": "Close"
+  }
+}
