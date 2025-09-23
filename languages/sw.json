@@ -1,0 +1,128 @@
+{
+  "app": {
+    "title": "NICU Rounds"
+  },
+  
+  "nav": {
+    "patients": "Wagonjwa Hai",
+    "archive": "Kumbukumbu",
+    "statistics": "Takwimu"
+  },
+  
+  "patients": {
+    "empty_title": "Hakuna Wagonjwa Hai",
+    "empty_message": "Bonyeza kitufe cha + hapo chini kuongeza mgonjwa wa kwanza",
+    "add_patient": "Ongeza Mgonjwa",
+    "search": "Tafuta wagonjwa..."
+  },
+  
+  "patient": {
+    "name": "Jina la Mgonjwa",
+    "sex": "Jinsia",
+    "male": "Mvulana",
+    "female": "Msichana",
+    "dob": "Tarehe ya Kuzaliwa",
+    "admission_date": "Tarehe ya Kulazwa",
+    "admission_source": "Alitoka Wapi",
+    "birth_weight": "Uzito wa Kuzaliwa",
+    "current_weight": "Uzito wa Sasa",
+    "ga": "Umri wa Mimba",
+    "dol": "Siku ya Maisha",
+    "dpa": "Siku Baada ya Kulazwa"
+  },
+  
+  "vitals": {
+    "title": "Vital Signs",
+    "heart_rate": "Mapigo ya Moyo",
+    "resp_rate": "Pumzi",
+    "temperature": "Joto",
+    "spo2": "SpO2",
+    "on_room_air": "Hewa ya Kawaida",
+    "on_oxygen": "Oksijeni",
+    "on_cpap": "CPAP",
+    "normal": "Kawaida",
+    "warning": "Onyo",
+    "critical": "Hatari"
+  },
+  
+  "diagnosis": {
+    "title": "Magonjwa",
+    "select": "Chagua ugonjwa",
+    "hie": "HIE (Hypoxic-Ischemic Encephalopathy)",
+    "birth_asphyxia": "Birth Asphyxia",
+    "eons": "EONS (Early Onset Neonatal Sepsis)",
+    "lons": "LONS (Late Onset Neonatal Sepsis)",
+    "rds": "RDS (Respiratory Distress Syndrome)",
+    "jaundice": "Njano/Hyperbilirubinemia",
+    "nec": "NEC (Necrotizing Enterocolitis)",
+    "macrosomia": "Macrosomia",
+    "iugr": "IUGR (Intrauterine Growth Restriction)"
+  },
+  
+  "examination": {
+    "title": "Uchunguzi wa Kimwili",
+    "activity": "Hali ya Uchaji",
+    "active": "Hai",
+    "lethargic": "Mzito",
+    "unresponsive": "Hajibu",
+    "sucking_reflex": "Sucking Reflex",
+    "normal": "Kawaida",
+    "weak": "Dhaifu",
+    "absent": "Hakuna",
+    "convulsions": "Degedege Leo",
+    "yes": "Ndio",
+    "no": "Hapana"
+  },
+  
+  "treatment": {
+    "title": "Matibabu ya Sasa",
+    "medications": "Dawa",
+    "nutrition": "Ulishaji",
+    "supportive_care": "Msaada wa Ziada",
+    "oxygen": "Oksijeni",
+    "cpap": "CPAP",
+    "phototherapy": "Taa ya Njano",
+    "iv_fluids": "Maji ya Mishipa"
+  },
+  
+  "plan": {
+    "title": "Mpango wa Leo",
+    "investigations": "Vipimo",
+    "changes": "Mabadiliko ya Matibabu",
+    "monitoring": "Ufuatiliaji"
+  },
+  
+  "actions": {
+    "save": "Hifadhi",
+    "cancel": "Ghairi",
+    "edit": "Hariri",
+    "delete": "Futa",
+    "archive": "Weka Kumbukumbu",
+    "print": "Chapisha",
+    "export": "Hamisha"
+  },
+  
+  "archive": {
+    "title": "Wagonjwa wa Kumbukumbu",
+    "discharged": "Wameachwa",
+    "transferred": "Wamehamishwa",
+    "deceased": "Wamefariki"
+  },
+  
+  "statistics": {
+    "title": "Takwimu za Idara",
+    "total_patients": "Jumla ya Wagonjwa",
+    "active": "Hai Sasa",
+    "archived": "Kumbukumbu",
+    "by_diagnosis": "Kwa Ugonjwa",
+    "outcomes": "Matokeo"
+  },
+  
+  "common": {
+    "loading": "Inapakia...",
+    "error": "Kosa",
+    "success": "Imefanikiwa",
+    "confirm": "Thibitisha",
+    "close": "Funga"
+  }
+}
