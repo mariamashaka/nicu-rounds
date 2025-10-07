@@ -92,8 +92,30 @@ const DailyRoundForm = {
 
                     <!-- Clinical Status -->
                     <fieldset style="border: 1px solid var(--color-border); padding: 1rem; margin-bottom: 1rem; border-radius: var(--radius-md);">
-                        <legend style="font-weight: bold;">Clinical Status</legend>
+                        <legend style="font-weight: bold;">Clinical Examination</legend>
                         
+                        <!-- Skin -->
+                        <div class="form-group">
+                            <label class="form-label" for="skinColor">Skin Color</label>
+                            <select id="skinColor" class="form-input" onchange="DailyRoundForm.handleSkinChange()">
+                                <option value="normal">Normal</option>
+                                <option value="pale">Pale</option>
+                                <option value="cyanosed">Cyanosed</option>
+                                <option value="jaundiced">Jaundiced</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Other skin description (if "other" selected) -->
+                        <div id="otherSkinDescription" style="display: none;" class="form-group">
+                            <label class="form-label" for="skinDescription">Describe skin appearance</label>
+                            <textarea id="skinDescription" class="form-input" rows="2" 
+                                      placeholder="Describe what you observe..."></textarea>
+                        </div>
+
+                        <!-- Jaundice Module Container (loaded dynamically) -->
+                        <div id="jaundiceModuleContainer"></div>
+
                         <div class="form-row">
                             <div class="form-group">
                                 <label class="form-label" for="activity">Activity Level</label>
@@ -164,6 +186,8 @@ const DailyRoundForm = {
             weight: document.getElementById('currentWeight').value ? 
                     parseFloat(document.getElementById('currentWeight').value) : null,
             clinical: {
+                skinColor: document.getElementById('skinColor').value,
+                jaundice: this.getJaundiceData(),
                 activity: document.getElementById('activity').value,
                 feeding: document.getElementById('feeding').value,
                 notes: document.getElementById('clinicalNotes').value
@@ -189,6 +213,45 @@ const DailyRoundForm = {
         PatientCard.show(this.currentPatientId);
         
         alert('Daily round saved successfully!');
+    },
+
+    getJaundiceData() {
+        const skinColor = document.getElementById('skinColor').value;
+        
+        if (skinColor !== 'jaundiced') {
+            return null;
+        }
+
+        // Get data from jaundice module if it exists
+        if (window.JaundiceModule && window.JaundiceModule.getData) {
+            return window.JaundiceModule.getData();
+        }
+
+        return null;
+    },
+
+    handleSkinChange() {
+        const skinColor = document.getElementById('skinColor').value;
+        const otherDescription = document.getElementById('otherSkinDescription');
+        const jaundiceContainer = document.getElementById('jaundiceModuleContainer');
+        
+        // Show/hide "other" description field
+        if (skinColor === 'other') {
+            otherDescription.style.display = 'block';
+        } else {
+            otherDescription.style.display = 'none';
+        }
+
+        // Load jaundice module if selected
+        if (skinColor === 'jaundiced') {
+            if (window.JaundiceModule) {
+                JaundiceModule.render(jaundiceContainer, this.currentPatientId);
+            } else {
+                jaundiceContainer.innerHTML = '<p class="text-warning">Jaundice module not loaded</p>';
+            }
+        } else {
+            jaundiceContainer.innerHTML = '';
+        }
     },
 
     close() {
