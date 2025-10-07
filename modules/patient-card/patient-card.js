@@ -47,54 +47,66 @@ const PatientCard = {
                 ` : ''}
 
                 <!-- Birth Data Card -->
-                <div class="card" style="margin-top: 1rem; border-left: 4px solid var(--color-info);">
-                    <h2>Birth Data</h2>
-                    <div class="patient-info-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
-                        ${patient.gaWeeks ? `
-                            <div>
-                                <div class="info-label" data-translate="patient.ga">Gestational Age</div>
-                                <div class="info-value">${patient.gaWeeks}+${patient.gaDays || 0} weeks</div>
-                            </div>
-                            <div>
-                                <div class="info-label">Maturity Category</div>
-                                <div class="info-value">
-                                    ${maturity.label}
-                                    <button class="btn-info-icon" onclick="PatientCard.showInfo('maturity')" title="Learn more">ℹ️</button>
+                <div class="card" style="margin-top: 1rem;">
+                    <h2>Birth Data & Assessment</h2>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1rem;">
+                        
+                        <!-- LEFT: Facts -->
+                        <div style="border-right: 2px solid var(--color-border); padding-right: 1rem;">
+                            <h3 style="font-size: 1rem; color: var(--color-text-secondary); margin-bottom: 1rem;">Birth Facts</h3>
+                            ${patient.gaWeeks ? `
+                                <div style="margin-bottom: 0.75rem;">
+                                    <div class="info-label">Gestational Age</div>
+                                    <div class="info-value">${patient.gaWeeks}+${patient.gaDays || 0} weeks</div>
                                 </div>
+                            ` : ''}
+                            <div style="margin-bottom: 0.75rem;">
+                                <div class="info-label">Birth Weight</div>
+                                <div class="info-value">${patient.birthWeight} kg (${(patient.birthWeight * 1000).toFixed(0)}g)</div>
                             </div>
-                        ` : ''}
-                        <div>
-                            <div class="info-label" data-translate="patient.birth_weight">Birth Weight</div>
-                            <div class="info-value">${patient.birthWeight} kg (${(patient.birthWeight * 1000).toFixed(0)}g)</div>
+                            ${patient.apgarScores.oneMin ? `
+                                <div style="margin-bottom: 0.75rem;">
+                                    <div class="info-label">APGAR Scores</div>
+                                    <div class="info-value">
+                                        ${patient.apgarScores.oneMin} / ${patient.apgarScores.fiveMin || '-'} / ${patient.apgarScores.tenMin || '-'}
+                                    </div>
+                                </div>
+                            ` : ''}
                         </div>
-                        <div>
-                            <div class="info-label">Birth Weight Category</div>
-                            <div class="info-value">
-                                <span class="badge badge-${birthWeightCat.color}">${birthWeightCat.label}</span>
-                                ${birthWeightCat.risk ? `
-                                    <button class="btn-info-icon" onclick="PatientCard.showInfo('birthWeight', '${birthWeightCat.key}')" title="Risks">ℹ️</button>
-                                ` : ''}
-                            </div>
-                        </div>
-                        ${weightForGA ? `
-                            <div>
-                                <div class="info-label">Weight for GA</div>
+
+                        <!-- RIGHT: Assessment -->
+                        <div style="padding-left: 1rem;">
+                            <h3 style="font-size: 1rem; color: var(--color-text-secondary); margin-bottom: 1rem;">Clinical Assessment</h3>
+                            ${patient.gaWeeks ? `
+                                <div style="margin-bottom: 0.75rem;">
+                                    <div class="info-label">Maturity Category</div>
+                                    <div class="info-value">
+                                        ${maturity.label}
+                                        <button class="btn-info-icon" onclick="PatientCard.showInfo('maturity')" title="Learn more">ℹ️</button>
+                                    </div>
+                                </div>
+                            ` : ''}
+                            <div style="margin-bottom: 0.75rem;">
+                                <div class="info-label">Birth Weight Category</div>
                                 <div class="info-value">
-                                    <span class="badge badge-${weightForGA.color}">${weightForGA.label}</span>
-                                    ${weightForGA.risk ? `
-                                        <button class="btn-info-icon" onclick="PatientCard.showInfo('weightForGA', '${weightForGA.key}')" title="Risks">ℹ️</button>
+                                    <span class="badge badge-${birthWeightCat.color}">${birthWeightCat.label}</span>
+                                    ${birthWeightCat.risk ? `
+                                        <button class="btn-info-icon" onclick="PatientCard.showInfo('birthWeight', '${birthWeightCat.key}')" title="Risks">ℹ️</button>
                                     ` : ''}
                                 </div>
                             </div>
-                        ` : ''}
-                        ${patient.apgarScores.oneMin ? `
-                            <div>
-                                <div class="info-label">APGAR Scores</div>
-                                <div class="info-value">
-                                    ${patient.apgarScores.oneMin} / ${patient.apgarScores.fiveMin || '-'} / ${patient.apgarScores.tenMin || '-'}
+                            ${weightForGA ? `
+                                <div style="margin-bottom: 0.75rem;">
+                                    <div class="info-label">Weight for GA</div>
+                                    <div class="info-value">
+                                        <span class="badge badge-${weightForGA.color}">${weightForGA.label}</span>
+                                        ${weightForGA.risk ? `
+                                            <button class="btn-info-icon" onclick="PatientCard.showInfo('weightForGA', '${weightForGA.key}')" title="Risks">ℹ️</button>
+                                        ` : ''}
+                                    </div>
                                 </div>
-                            </div>
-                        ` : ''}
+                            ` : ''}
+                        </div>
                     </div>
                 </div>
 
@@ -335,12 +347,12 @@ const PatientCard = {
         if (type === 'maturity') {
             title = 'Gestational Age Categories';
             content = `
-                <p><strong>Extremely Preterm:</strong> &lt;28 weeks</p>
-                <p><strong>Very Preterm:</strong> 28-31+6 weeks</p>
-                <p><strong>Moderate/Late Preterm:</strong> 32-36+6 weeks</p>
-                <p><strong>Term:</strong> 37-41+6 weeks</p>
-                <p><strong>Post-term:</strong> ≥42 weeks</p>
-            `;
+                <strong>Extremely Preterm:</strong> <28 weeks
+                <strong>Very Preterm:</strong> 28-31+6 weeks
+                <strong>Moderate/Late Preterm:</strong> 32-36+6 weeks
+                <strong>Term:</strong> 37-41+6 weeks
+                <strong>Post-term:</strong> ≥42 weeks
+            `.trim().split('\n').map(line => line.trim()).join('\n');
         } else if (type === 'birthWeight') {
             const risks = {
                 'elbw': 'All VLBW risks plus severe developmental delays, chronic lung disease',
@@ -348,17 +360,17 @@ const PatientCard = {
                 'lbw': 'Hypothermia, hypoglycemia, feeding difficulties, increased infection risk'
             };
             title = 'Birth Weight Category Risks';
-            content = `<p><strong>Associated Risks:</strong></p><p>${risks[category]}</p>`;
+            content = `Associated Risks:\n${risks[category]}`;
         } else if (type === 'weightForGA') {
             const risks = {
                 'sga': 'Hypoglycemia, polycythemia, hypothermia, neurodevelopmental delays',
                 'lga': 'Birth trauma, hypoglycemia, respiratory distress, increased cesarean section risk'
             };
             title = 'Weight for GA Risks';
-            content = `<p><strong>Associated Risks:</strong></p><p>${risks[category]}</p>`;
+            content = `Associated Risks:\n${risks[category]}`;
         }
 
-        alert(`${title}\n\n${content.replace(/<[^>]*>/g, '\n')}`);
+        alert(`${title}\n\n${content}`);
     },
 
     // Show growth chart (placeholder for now)
