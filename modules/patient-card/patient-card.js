@@ -346,13 +346,11 @@ const PatientCard = {
 
         if (type === 'maturity') {
             title = 'Gestational Age Categories';
-            content = `
-                <strong>Extremely Preterm:</strong> <28 weeks
-                <strong>Very Preterm:</strong> 28-31+6 weeks
-                <strong>Moderate/Late Preterm:</strong> 32-36+6 weeks
-                <strong>Term:</strong> 37-41+6 weeks
-                <strong>Post-term:</strong> ≥42 weeks
-            `.trim().split('\n').map(line => line.trim()).join('\n');
+            content = `Extremely Preterm: <28 weeks
+Very Preterm: 28-31+6 weeks
+Moderate/Late Preterm: 32-36+6 weeks
+Term: 37-41+6 weeks
+Post-term: ≥42 weeks`;
         } else if (type === 'birthWeight') {
             const risks = {
                 'elbw': 'All VLBW risks plus severe developmental delays, chronic lung disease',
@@ -360,14 +358,14 @@ const PatientCard = {
                 'lbw': 'Hypothermia, hypoglycemia, feeding difficulties, increased infection risk'
             };
             title = 'Birth Weight Category Risks';
-            content = `Associated Risks:\n${risks[category]}`;
+            content = `Associated Risks:\n\n${risks[category]}`;
         } else if (type === 'weightForGA') {
             const risks = {
                 'sga': 'Hypoglycemia, polycythemia, hypothermia, neurodevelopmental delays',
                 'lga': 'Birth trauma, hypoglycemia, respiratory distress, increased cesarean section risk'
             };
             title = 'Weight for GA Risks';
-            content = `Associated Risks:\n${risks[category]}`;
+            content = `Associated Risks:\n\n${risks[category]}`;
         }
 
         alert(`${title}\n\n${content}`);
